@@ -22,6 +22,8 @@ ROBOTSTXT_OBEY = True
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
+
+
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
@@ -50,9 +52,20 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'MyScrapyProject.middlewares.MyscrapyprojectDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'MyScrapyProject.middlewares.MyscrapyprojectDownloaderMiddleware': 543,
+   'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610
+}
+# enable Zyte Proxy
+ZYTE_SMARTPROXY_ENABLED = True
+# the APIkey you get with your subscription
+ZYTE_SMARTPROXY_APIKEY = 'd1d3dfa7dc4444a88a253a0263be5877'
+
+AUTOTHROTTLE_ENABLED = False
+CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS_PER_DOMAIN = 32
+DOWNLOAD_TIMEOUT = 600 
+
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -81,7 +94,7 @@ ROBOTSTXT_OBEY = True
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-#HTTPCACHE_ENABLED = True
+HTTPCACHE_ENABLED = False
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
