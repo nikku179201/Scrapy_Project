@@ -1,0 +1,4 @@
+projects:
+  default: 635258
+requirements:
+  file: ./requirements.txt
