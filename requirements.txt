@@ -23,5 +23,6 @@ xmltodict==0.13.0
 chompjs==1.0.13
 pretty-html-table==0.9.16
 pysftp
+scrapy-zyte-smartproxy==2.2.0
 
 
